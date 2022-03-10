@@ -4,8 +4,6 @@ const runner = require('child_process');
 
 exports.run = function(port,root) {
     const server = http.createServer((req, res) => {
-        console.log(req.rawHeaders)
-        console.log(req.url)
         if(req.rawHeaders[1] != root){
         var domain = "users/"+req.rawHeaders[1];
         }else{
@@ -13,23 +11,30 @@ exports.run = function(port,root) {
         }
         var file = "./data/web/" + domain + req.url;
         if (req.url.endsWith("/")) {
-            file = "./data/web/"+domain+"/"+ req.url + "home.html";
+            file = "./data/web/"+domain+ req.url + "home.html";
           }
           if (fs.existsSync(file)) {
             if(file.endsWith(".php")){
                 // soon tm
               }
-            console.log("{INFO} Rendering page")
             }else{
               console.log('{ERROR} server can not find | ' + file +' |')
+              if (!req.url.includes(".")) {
                file = "./data/web/admins/shared/404.html"
+              }else{
+                file = "./data/web/admins/shared/404.null"
+              }
             }
+            console.log(file)
           fs.readFile(file, function(err, data) {
               console.log(file)
               if (err) throw err;
               if (file.endsWith(".html")) {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data);
+              }
+                else if (file.endsWith(".null")) {
+            res.writeHead(404, {'Content-Type': 'text/html'});
               }
               else{
                 res.write(data);
