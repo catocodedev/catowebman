@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const runner = require('child_process');
 
 exports.run = function(port,root) {
     const server = http.createServer((req, res) => {
@@ -22,13 +21,17 @@ exports.run = function(port,root) {
               if (!req.url.includes(".")) {
                file = "./data/web/admins/shared/404.html"
               }else{
+                if(req.url.endsWith("sadcat.jfif")){
+                  file = "./data/web/admins/shared/sadcat.jfif"
+                  }else{
                 file = "./data/web/admins/shared/404.null"
+                  }
               }
             }
             console.log(file)
           fs.readFile(file, function(err, data) {
               console.log(file)
-              if (err) throw err;
+              if (err) console.log(err);
               if (file.endsWith(".html")) {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data);
@@ -43,5 +46,5 @@ exports.run = function(port,root) {
             });
     });
     server.listen(port)
-        console.log(`Server is running on port ${port}`);
+        console.log(`Web Server is running on port ${port}`);
     }
