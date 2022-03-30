@@ -1,27 +1,237 @@
 <head>
     <style>
-    body{
-    background-color: #0d0049;
-    color: #ff0000;
-    /* Center the body */
-    margin-top: 10%;
-}
-h1{
-    font-size: 80px;
-    font-family: "Times New Roman", Times, serif;
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #525f7f;
+    background-color: #1e1e2f;
+
+  }
+  a {
+      
+    color: #2dce89;
+    text-decoration: none;
+    background-color: transparent;
+    justify-content: center;
     text-align: center;
-}
-p{
-    font-size: 20px;
-    font-family: "Times New Roman", Times, serif;
+      /* center everything */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  a:hover {
+    color: #11cdef;
+    text-decoration: none;
+    justify-content: center;
     text-align: center;
-}
-img{
-    /* Center the image */
+        /* center everything */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  }
+  .card{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    justify-content: center;
+    text-align: center;
+  }
+  h1{
+    color: #2dce89;
+    border-bottom: 1px solid #11cdef;
+    text-align: center;
+  }
+  h3{
+    color: #2dce89;
+    text-align: center;
+  }
+  h2{
+    color: #2dce89;
+    justify-content: center;
+    text-align: center;
+  }
+  p {
+    color: #2dce89;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  img {
+    /* center the image */
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
+
+    
+  }
+  label {
+    color: #2dce89;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    justify-content: center;
+    text-align: center;
+  }
+  button {
+    color: #ffffff;
+    background-color: #2dce89;
+    border-color: #11cdef;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    padding: 11px 40px;
+    font-size: 0.875rem;
+    line-height: 1.35em;
+    border-radius: 20px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  button:hover {
+    color: #ffffff;
+    background-color: #11cdef;
+    border-color: #2dce89;
+    justify-content: center;
+    text-align: center;
+  }
+  select {
+    color: #ffffff;
+    background-color: #2dce89;
+    border-color: #11cdef;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    padding: 11px 40px;
+    font-size: 0.875rem;
+    line-height: 1.35em;
+    border-radius: 20px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  select:hover {
+    color: #ffffff;
+    background-color: #11cdef;
+    border-color: #2dce89;
+    justify-content: center;
+    text-align: center;
+  }
+  textarea{
+    color: #2dce89;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    justify-content: center;
+    text-align: center;
+  }
+  .row{
+  border: 2px solid #11cdef;
+  float:up;
+  width: 90%;
+  }
+  .column{
+  border: solid;
+  float: left;
+  border-color:  #2dce89;
+  width: 20%;
+  border-radius: 10px;
+  }
+  progress{
+     color:#5603ad;
+      width: 90%;
+  }
+  .submenu{
+  margin-left: 5%;
+  margin-top: 10px;
+  width: 80%;
+  border:solid;
+  border-color: #11cdef;
+  margin-bottom:10px; 
+  background-color: #282f5a; 
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  
+  }
+  .video_post{
+  margin-left: 5%;
+  margin-top: 10px;
+  width: 80%;
+  border:solid;
+  border-color: #11cdef;
+  margin-bottom:10px; 
+  background-color: #282f5a; 
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  }
+  .audio_post{
+  margin-left: 5%;
+  margin-top: 10px;
+  width: 80%;
+  border:solid;
+  border-color: #11cdef;
+  margin-bottom:10px; 
+  background-color: #282f5a; 
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  }
+  .text_post{
+  margin-left: 5%;
+  margin-top: 10px;
+  width: 80%;
+  border:solid;
+  border-color: #11cdef;
+  margin-bottom:10px; 
+  background-color: #282f5a; 
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  }
+  .picture_post{
+  margin-left: 5%;
+  margin-top: 10px;
+  width: 80%;
+  border:solid;
+  border-color: #11cdef;
+  margin-bottom:10px; 
+  background-color: #282f5a; 
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  }
+  
+  input {
+    color: #ffffff;
+    background-color: #2dce89;
+    user-select: none;
+    font-size: 15px;
+    line-height: 30px;
+    border-radius: 10px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    justify-content: center;
+    text-align: center;
+  }
+  input:hover {
+    color: #ffffff;
+    background-color: #11cdef;
+    border-color: #2dce89;
+    justify-content: center;
+    text-align: center;
+  }
+  .alert{
+    padding: 20px;
+    background-color: #ff4848;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    margin-left: 5%;
+    width: 80%;
+    border-radius: 10px;
+  }
 </style>
     <title>404</title>
     </head>
@@ -29,4 +239,5 @@ img{
 <h1>404</h1>
 <img src="sadcat.jfif">
 <p>The page you are looking for does not exist. );</p>
+<p>If you believe this is an error, please contact the site administrator.</p>
 </body>

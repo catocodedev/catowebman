@@ -3,10 +3,18 @@ const fs = require('fs');
 
 exports.run = function(port,root) {
     const server = http.createServer((req, res) => {
-        if(req.rawHeaders[1] != root){
-        var domain = "users/"+req.rawHeaders[1];
+        console.log(root)
+        console.log("URL: " + req.rawHeaders[1]);
+        if(req.rawHeaders[1] == root || req.rawHeaders[1] == "dash."+root){
+          if(req.rawHeaders[1] == "dash."+root){
+            var domain = "admins/dash";
+            }else{
+            var domain = "admins/root"
+            }
         }else{
-        var domain = "admins/root"    
+
+        var domain = "users/"+req.rawHeaders[1];
+ 
         }
         var file = "./data/web/" + domain + req.url;
         if (req.url.endsWith("/")) {
@@ -18,13 +26,19 @@ exports.run = function(port,root) {
               }
             }else{
               console.log('{ERROR} server can not find | ' + file +' |')
-              if (!req.url.includes(".")) {
-               file = "./data/web/admins/shared/404.html"
-              }else{
+              if (!req.url.endsWith(".html")) {
                 if(req.url.endsWith("sadcat.jfif")){
                   file = "./data/web/admins/shared/sadcat.jfif"
-                  }else{
+                }else  if(req.url.endsWith("tnarr.mp4")){
+                  file = "./data/web/admins/shared/tnarr.mp4"
+                  }
+                  else{
                 file = "./data/web/admins/shared/404.null"
+                  }
+              }else{
+                file = "./data/web/admins/shared/404.html"
+                if(req.url.endsWith("tnarr.html")){
+                  file = "./data/web/admins/shared/tnarr.html"
                   }
               }
             }
